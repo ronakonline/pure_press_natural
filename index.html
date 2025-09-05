@@ -501,7 +501,7 @@
                 <!-- /.sec-title__tagline -->
 
                 <h3 class="sec-title__title bw-split-in-left">
-                  Products To Delivered
+                  Products We Offer
                 </h3>
                 <!-- /.sec-title__title -->
               </div>
@@ -750,7 +750,7 @@
                     <a href="flexi-tank.html">Flexi tank</a>
                   </div>
                   <h4 class="product-two__item__title">
-                    <a href="flexi-tank.html">Size - 20ft & 25ft </a>
+                    <a href="flexi-tank.html">Size - 20MT </a>
                   </h4>
                   <!-- /.product-title -->
                   <!-- <div class="product-two__item__price">$11.00</div> -->
@@ -1269,6 +1269,18 @@
         <!-- /.container -->
       </section>
 
+      <!-- Toast Notification Container -->
+      <div id="formToast" class="form-toast" style="display: none;">
+        <div class="form-toast__content">
+          <i class="fas fa-check-circle form-toast__icon"></i>
+          <div>
+            <h4>Thank You!</h4>
+            <p>We've received your message and will revert back to you within 24 hours.</p>
+          </div>
+        </div>
+        <button class="form-toast__close" onclick="document.getElementById('formToast').style.display='none'">&times;</button>
+      </div>
+
       <section class="contact-two">
         <div
           class="contact-two__bg"
@@ -1288,6 +1300,8 @@
               <form
                 class="contact-two__form contact-form-validated form-one wow fadeInUp"
                 data-wow-duration="1500ms"
+                action="https://formspree.io/f/xzzakwqe"
+                method="POST"
               >
                 <div class="sec-title text-center">
                   <h6 class="sec-title__tagline bw-split-in-right">
@@ -1692,6 +1706,31 @@
       </svg>
     </a>
     <!-- back-to-top-end -->
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const form = document.querySelector('.contact-form-validated');
+        const toast = document.getElementById('formToast');
+      
+        if (form && toast) {
+          form.addEventListener('submit', function(e) {
+            // Let the form submit normally to Formspree
+            // Show toast after a tiny delay to ensure submission started
+            setTimeout(function() {
+              toast.style.display = 'flex';
+      
+              // Optional: Auto-hide after 5 seconds
+              setTimeout(function() {
+                toast.style.display = 'none';
+              }, 5000);
+      
+              // Optional: Reset form after showing toast
+              // form.reset();
+            }, 300);
+          });
+        }
+      });
+      </script>
 
     <script src="assets/vendors/jquery/jquery-3.7.0.min.js"></script>
     <script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>

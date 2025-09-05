@@ -371,6 +371,62 @@ h6 {
   --bs-gutter-y: 60px;
 }
 
+.form-toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  background: #4CAF50;
+  color: white;
+  padding: 16px 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  animation: slideInRight 0.3s ease forwards;
+  max-width: 400px;
+}
+
+.form-toast__icon {
+  font-size: 24px;
+}
+
+.form-toast h4 {
+  margin: 0 0 4px 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.form-toast p {
+  margin: 0;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Optional: Add close button */
+.form-toast__close {
+  margin-left: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 18px;
+  background: none;
+  border: none;
+  color: white;
+  padding: 0;
+}
+
 .alefox-btn {
   display: inline-block;
   vertical-align: middle;
